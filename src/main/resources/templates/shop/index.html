@@ -17,11 +17,18 @@
 </head>
 <body>
 <main class="main" id="main-content">
-    <div class="home-slider owl-carousel owl-theme owl-carousel-lazy show-nav-hover nav-big mb-2 text-uppercase" data-owl-options="{
-				'loop': false
-			}">
+    <div class="home-slider owl-carousel owl-theme owl-carousel-lazy show-nav-hover nav-big mb-2 text-uppercase"
+         data-owl-options="{
+            'loop': true,
+            'autoplay': true,
+            'autoplayTimeout': 3000,
+            'autoplayHoverPause': true,
+            'item': 1,
+            'animateOut': 'owl-slide-out-left',
+            'animateIn': 'owl-slide-in-right'
+         }">
         <div class="home-slide home-slide1 banner">
-            <img class="owl-lazy slide-bg" th:src="@{/shop/images/slider/nike-just-do-it.jpg}" data-src="shop/images/slider/nike-just-do-it.jpg" alt="slider image">
+            <img class="owl-lazy slide-bg" th:src="@{/shop/images/slider/banner-web-1.png}" data-src="shop/images/slider/banner-web-1.png" alt="slider image">
 <!--            <div class="container">-->
 <!--                <div class="banner-layer banner-layer-middle">-->
 <!--                    <h4 class="text-transform-none m-b-3">Find the Boundaries. Push Through!</h4>-->
@@ -36,7 +43,7 @@
         </div><!-- End .home-slide -->
 
         <div class="home-slide home-slide2 banner banner-md-vw">
-            <img class="owl-lazy slide-bg" th:src="@{/shop/images/slider/nike-just-do-it (1).jpg}" data-src="shop/images/slider/nike-just-do-it (1).jpg" alt="slider image">
+            <img class="owl-lazy slide-bg" th:src="@{/shop/images/slider/banner-web-2.png}" data-src="shop/images/slider/banner-web-2.png" alt="slider image">
 <!--            <div class="container">-->
 <!--                <div class="banner-layer banner-layer-middle d-flex justify-content-center">-->
 <!--                    <div class="mx-auto">-->
@@ -49,6 +56,10 @@
 <!--                </div>&lt;!&ndash; End .banner-layer &ndash;&gt;-->
 <!--            </div>-->
         </div><!-- End .home-slide -->
+
+        <div class="home-slide home-slide3 banner banner-md-vw">
+            <img class="owl-lazy slide-bg" th:src="@{/shop/images/slider/banner-web-3.png}" data-src="shop/images/slider/banner-web-3.png" alt="slider image">
+        </div>
     </div><!-- End .home-slider -->
 
     <div class="container">
@@ -332,3 +343,31 @@
 </th:block>
 </body>
 </html>
+
+<style>
+    /* Banner slider */
+    .home-slider img {
+        min-height: 100% !important;
+    }
+
+    /* Custom Animation for Slider */
+    @keyframes customSlideOutLeft {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+    .owl-slide-out-left {
+        animation: customSlideOutLeft 1s ease-in-out forwards;
+    }
+
+    @keyframes customSlideInRight {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(0); }
+    }
+    .owl-slide-in-right {
+        animation: customSlideInRight 1s ease-in-out forwards;
+    }
+
+    .owl-carousel.nav-big .owl-nav i.icon-angle-left {
+        padding-right: 10px;
+    }
+</style>
