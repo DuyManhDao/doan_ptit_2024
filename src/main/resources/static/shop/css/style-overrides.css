@@ -1,0 +1,8 @@
+/*Info box*/
+.info-box {
+    height: 90px;
+}
+
+.info-box .info-box-content {
+    margin-right: 30px;
+}
